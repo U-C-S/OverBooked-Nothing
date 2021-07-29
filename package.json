@@ -1,0 +1,9 @@
+{
+  "name": "overbooked",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ]
+}
