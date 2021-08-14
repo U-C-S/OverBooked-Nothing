@@ -7,7 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "OverBookedAPI", Version = "v1" });
+    c.SwaggerDoc("v1", new()
+    {
+        Title = "OverBookedAPI",
+        Version = "v0.0.1",
+        Description = "A Web App for storing and managing your Web Bookmarks and Reading Lists",
+        License = new() { Name = "MIT License" },
+        Contact = new() { Name = "Chanakya", Email = "uchanakyasrinivas@gmail.com", Url = new("https://github.com/U-C-S") }
+    });
 });
 
 var app = builder.Build();
@@ -21,9 +28,7 @@ if (builder.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
