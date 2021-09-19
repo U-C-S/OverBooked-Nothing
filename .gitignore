@@ -1,6 +1,9 @@
 node_modules
-dump
+_dump
 Private
+.next
+out
+build
 
 
 ### ASPNETCore ###

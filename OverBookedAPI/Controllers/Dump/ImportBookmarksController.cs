@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using OverBookedAPI.Models;
+using System;
+using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace OverBookedAPI.Controllers;
+namespace OverBookedAPI.Controllers.Dump;
 
-[Route("api/import")]
+[Route("[controller]")]
 [ApiController]
 public class ImportBookmarksController : ControllerBase
 {
@@ -28,7 +32,7 @@ public class ImportBookmarksController : ControllerBase
     //}
 
 
-    [HttpPost]
+    [HttpPost("/getFile")]
     public string Post(IFormFile file, bool simplified)
     {
         string thedata = "Null";
