@@ -1,0 +1,7 @@
+{
+  "name": "the-unamed-project",
+  "workspaces": [
+    "client",
+    "api"
+  ]
+}
